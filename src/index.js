@@ -1,3 +1,10 @@
 import validator from './validator.js';
 
-console.log(validator);
+const submit = document.getElementById("validate")
+const cardNumber = document.getElementById("card-number")
+
+submit.addEventListener("click", (e) => {
+  e.preventDefault
+  console.log(validator.isValid(cardNumber.value))
+})
+
