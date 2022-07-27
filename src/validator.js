@@ -2,12 +2,10 @@ const validator = {
   isValid: (cardNumber) => {
     let sumEven = 0
     let sumOdds = 0
-    let stringToArr = cardNumber.split('').reverse()
-    let reverseCardNumbers = stringToArr.join('')
 
     for(let index = 0; index <= cardNumber.length - 1; index++) {
-      const currentNumber = Number(reverseCardNumbers[index])
-      const isEven = index % 2 == 0
+      const currentNumber = Number(cardNumber[index])
+      const isEven = index % 1 == 0
       const isOdd = index % 2 !== 0;
       
       if(isEven) {
@@ -25,8 +23,6 @@ const validator = {
       }
     }
     const sumAllNumber = sumOdds + sumEven
-    console.log(sumOdds, sumEven, sumAllNumber)
-
     const isValidNumber = sumAllNumber % 10 === 0;
     return isValidNumber;
   }
